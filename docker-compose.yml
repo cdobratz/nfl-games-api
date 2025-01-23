@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  api:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - RUNDOWN_API_KEY=mvhdxjF321gqxILWpMK56ZWcjJ8ALZkE
+    depends_on:
+      - redis
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
